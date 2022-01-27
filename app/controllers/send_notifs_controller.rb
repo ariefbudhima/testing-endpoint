@@ -1,8 +1,8 @@
 class SendNotifsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  def show
-    render json: params
+  def show    
+    render json: params_send_notif
   end
 
 
@@ -14,10 +14,9 @@ class SendNotifsController < ApplicationController
       :title,
       :content,
       :image_url,
-      doctor: [
-        :name,
-        :picture
-      ]
+      :reply_type,
+      :doctor => {},
+      :data => {}
     )
   end
   
