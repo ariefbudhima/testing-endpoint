@@ -5,6 +5,10 @@ class SendNotifsController < ApplicationController
     render json: params_send_notif
   end
 
+  def default
+    render json: params, :except => [:controller, :action, :send_notif]
+  end
+
 
   private
   def params_send_notif
@@ -19,5 +23,9 @@ class SendNotifsController < ApplicationController
       :data => {}
     )
   end
-  
+ 
+  # def test_params
+  #   params.permit!
+  # end
+
 end

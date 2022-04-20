@@ -1,0 +1,28 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/":
+    post:
+      summary: send notif and get response back
+      tags:
+      - send_notifs
+      parameters: []
+      responses:
+        '200':
+          description: return same result as parameter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                any_name:
+                  type: string
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
